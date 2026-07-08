@@ -4,7 +4,7 @@ Software Engineer · Backend & Test Systems · AI/Agentic Developer Tools · App
 
 Production Software · Automated Validation · Developer Tooling · Runtime Diagnostics · Evidence-Bounded Systems · Agent Continuity · Computer Vision
 
-I am a software engineer with 15+ years of production-systems experience.
+I am a software engineer with extensive production-systems experience.
 
 My recent work focuses on agentic developer tools, applied ML systems, computer vision, audio ML, and technical R&D, but the through-line is software engineering: building systems with explicit contracts, reliable workflows, testable boundaries, inspectable outputs, recoverable state, and clear failure modes.
 
