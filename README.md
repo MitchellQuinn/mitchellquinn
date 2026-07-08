@@ -1,12 +1,12 @@
 # Mitchell Quinn
 
-**Software Engineer · Backend & Test Systems · AI/Agentic Developer Tools · Applied ML Systems**
+Software Engineer · Backend & Test Systems · AI/Agentic Developer Tools · Applied ML Systems
 
-Production Software · Automated Validation · Developer Tooling · Runtime Diagnostics · Evidence-Bounded Systems · Computer Vision
+Production Software · Automated Validation · Developer Tooling · Runtime Diagnostics · Evidence-Bounded Systems · Agent Continuity · Computer Vision
 
 I am a software engineer with 15+ years of production-systems experience.
 
-My recent work focuses on agentic developer tools, applied ML systems, computer vision, audio ML, and technical R&D, but the through-line is software engineering: building systems with explicit contracts, reliable workflows, testable boundaries, inspectable outputs, and clear failure modes.
+My recent work focuses on agentic developer tools, applied ML systems, computer vision, audio ML, and technical R&D, but the through-line is software engineering: building systems with explicit contracts, reliable workflows, testable boundaries, inspectable outputs, recoverable state, and clear failure modes.
 
 I am looking for software engineering roles across backend systems, software test engineering, validation tooling, developer tools, AI engineering, ML systems, runtime diagnostics, and research-engineering-adjacent work.
 
@@ -16,12 +16,7 @@ I am looking for software engineering roles across backend systems, software tes
 
 Across both my earlier production work and my recent independent projects, the recurring pattern is:
 
-> Build the system.
-> Define the contract.
-> Automate the checks.
-> Preserve the evidence.
-> Inspect the failure.
-> Improve the next run.
+> Build the system. Define the contract. Automate the checks. Preserve the evidence. Inspect the failure. Improve the next run.
 
 That shows up in:
 
@@ -30,6 +25,7 @@ That shows up in:
 * CLI tools and developer-facing automation
 * schema-controlled outputs and validation gates
 * reproducible run artefacts and manifests
+* durable execution records for long-running agent work
 * diagnostic traces and incident-style failure analysis
 * applied ML systems where evaluation and runtime behaviour matter as much as model output
 
@@ -58,7 +54,7 @@ WorkOverCV produces reviewable outputs including:
 * structured reports
 * validation-controlled artefacts
 
-It does **not** make hiring decisions, certify competence, infer protected or private traits, or treat popularity metrics as competence metrics.
+It does not make hiring decisions, certify competence, infer protected or private traits, or treat popularity metrics as competence metrics.
 
 Evidence of:
 
@@ -102,16 +98,39 @@ Evidence of:
 * validation-oriented output design
 * bounded use of LLMs rather than oracle-style prompting
 
-ClaimLint and WorkOverCV are related but distinct:
+---
 
-* **ClaimLint** audits whether repository claims are supported by available evidence.
-* **WorkOverCV** uses repository artefacts to produce cautious work-behaviour review notes.
+### 3. Agent Working Ledger
 
-Together, they form the current front door of my agentic systems and developer-tooling work.
+**Durable execution ledger for long-running agent tasks.**
+Repository: [github.com/MitchellQuinn/agent-working-ledger](https://github.com/MitchellQuinn/agent-working-ledger)
+
+Agent Working Ledger is a small agentic-developer-tooling project for making long-running AI coding-agent work resumable, reviewable, and handoff-safe.
+
+It gives each substantial task a durable, human-readable execution record covering objectives, progress, decisions, validation evidence, blockers, recovery notes, and next actions. It exists because agentic coding work often fails at the boundaries: interrupted sessions, lost context, stale assumptions, validation drift, and handoffs where the next worker cannot tell what actually happened.
+
+The project treats agent work state as something that should be explicit, inspectable, scoped, and safe to abandon or supersede. The Markdown ledger remains the authority; helper tooling and runtime wrappers exist to create, check, summarise, close, supersede, and adapt ledger scopes without redefining the core schema.
+
+It is deliberately not a planner, issue tracker, test runner, source-control replacement, hidden memory system, or claim of universal agent-runtime compatibility.
+
+Evidence of:
+
+* agentic workflow infrastructure design
+* task-local execution-state modelling
+* human-readable and agent-readable artefact design
+* interruption, handoff, and resumption semantics
+* validation evidence and blocker tracking
+* recovery-state design for context loss and drift
+* CLI helper tooling
+* runtime-agnostic core specification
+* thin adapter/wrapper design for agent environments
+* conservative scope boundaries and explicit non-claims
+
+Current status: public alpha source release with documented specification, templates, examples, evals, runtime wrapper material, and helper CLI. It is not claiming production adoption, PyPI publication, or universal agent-runtime compatibility.
 
 ---
 
-### 3. Bounded Monocular Perception
+### 4. Bounded Monocular Perception
 
 **Fixed-camera vehicle distance/yaw estimation under controlled conditions.**
 Repository: [github.com/MitchellQuinn/bounded-monocular-perception](https://github.com/MitchellQuinn/bounded-monocular-perception)
@@ -157,7 +176,7 @@ The live-local work is treated separately through trace-backed runtime evidence 
 
 ---
 
-### 4. Industrial Sound Anomaly Detection
+### 5. Industrial Sound Anomaly Detection
 
 **Machine pump abnormality detection using compact spectral representations.**
 Repository: [github.com/MitchellQuinn/industrial-sound-anomaly-detection](https://github.com/MitchellQuinn/industrial-sound-anomaly-detection)
@@ -187,7 +206,7 @@ A stricter unseen-unit holdout exposed a cross-unit generalisation gap. That is 
 
 ---
 
-### 5. Zero–Infinity Algebra
+### 6. Zero–Infinity Algebra
 
 **Numerical representation research for preserving distinguishability across collapse events.**
 DOI: [10.5281/zenodo.18280702](https://doi.org/10.5281/zenodo.18280702)
@@ -212,6 +231,22 @@ ZIA is not my main employment-facing artefact, but it is useful evidence of dept
 
 ---
 
+## How these projects fit together
+
+WorkOverCV, ClaimLint, and Agent Working Ledger are related but distinct:
+
+* **ClaimLint** audits whether repository claims are supported by available evidence.
+* **WorkOverCV** uses repository artefacts to produce cautious work-behaviour review notes.
+* **Agent Working Ledger** preserves task-local execution state so agentic software work can be interrupted, reviewed, resumed, or handed off without losing decisions, blockers, validation state, or recovery context.
+
+Together, they form the current front door of my agentic systems and developer-tooling work.
+
+Bounded Monocular Perception and Industrial Sound Anomaly Detection show the same engineering pattern applied to ML systems: bounded claims, explicit evaluation, reproducible artefacts, runtime traces, and careful separation between validation evidence and deployment claims.
+
+Zero–Infinity Algebra shows the same pattern applied to formal technical R&D: define the representation, separate facts from policy choices, test the implementation, and be explicit about practical limits.
+
+---
+
 ## What this portfolio is evidence for
 
 * Production software engineering carried into current technical work
@@ -219,6 +254,10 @@ ZIA is not my main employment-facing artefact, but it is useful evidence of dept
 * Automated validation and testable runtime boundaries
 * Developer tools and CLI workflows
 * Agentic workflow systems
+* Durable execution-state design for long-running agent tasks
+* Agent handoff, resumption, and recovery workflows
+* Human-readable / agent-readable protocol design
+* Runtime wrapper and adapter design for agent environments
 * Evidence-bounded repository review
 * Claim/evidence separation and validation-controlled outputs
 * Applied AI / ML systems engineering in bounded domains
@@ -243,6 +282,9 @@ I am not presenting this work as evidence of:
 * automated hiring decision-making
 * competence scoring from GitHub popularity
 * exhaustive repository auditing
+* production adoption of Agent Working Ledger
+* universal compatibility across all agent runtimes
+* hidden or automatic long-term agent memory
 * certification, compliance, or safety assurance
 
 The strongest evidence here is bounded end-to-end ownership, system evaluation, runtime behaviour, explicit claim boundaries, and making technical claims inspectable.
@@ -294,7 +336,7 @@ Earlier production background includes ASP.NET / MVC, Windows services, SQL Serv
 
 ### Agentic systems and developer tools
 
-Agentic workflows · repository review systems · evidence-bounded reports · workflow/runtime contracts · agent adapters · CLI tooling · schema-controlled artefacts · validation gates · provenance records · fail-closed output checks
+Agentic workflows · repository review systems · evidence-bounded reports · workflow/runtime contracts · task-local execution ledgers · agent handoff and resumption workflows · recovery notes · agent adapters · runtime wrapper material · CLI tooling · schema-controlled artefacts · validation gates · provenance records · fail-closed output checks
 
 ### Machine learning and data
 
@@ -332,6 +374,7 @@ The recent work is deliberately built as an evidence stack:
 * written technical reasoning
 * reproducible outputs
 * trace-backed failure analysis
+* recoverable execution state
 
 The aim is not to pretend the gap did not happen. The aim is to make the technical return legible through current, concrete, inspectable work.
 
@@ -339,15 +382,11 @@ The aim is not to pretend the gap did not happen. The aim is to make the technic
 
 ## Current focus
 
-I am currently focused on roles where software engineering discipline matters: backend systems, validation tooling, developer tools, applied AI systems, technical diagnostics, evidence-bounded review tooling, and research-engineering contexts.
+I am currently focused on roles where software engineering discipline matters: backend systems, validation tooling, developer tools, applied AI systems, technical diagnostics, evidence-bounded review tooling, agentic workflow infrastructure, and research-engineering contexts.
 
 The centre of gravity is:
 
-> Build useful systems.
-> Keep the claims bounded.
-> Preserve the evidence.
-> Make failure inspectable.
-> Let the work explain the engineer.
+> Build useful systems. Keep the claims bounded. Preserve the evidence. Make failure inspectable. Make work state recoverable. Let the work explain the engineer.
 
 ---
 
